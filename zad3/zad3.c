@@ -116,7 +116,6 @@ int main ( void )
     /* Infinite Loop */
     while ( 1 )
     {
-        //SEKWENCJA ROZCHODZENIE SIE
         for(int i=0;i<22;i++)
         {
             LCD_PutString ( tablica[i] , sizeof(tablica) ) ;

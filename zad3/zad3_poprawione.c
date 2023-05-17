@@ -86,14 +86,13 @@ APP_DATA appData = {
 // *****************************************************************************
 int main ( void )
 {
-    lcd_init();
     SYS_Initialize();
     //https://openlabpro.com/guide/custom-character-lcd-pic/?fbclid=IwAR0ZAMS0KPyWX2emjHpkgujIbLyBNNELObAcFTSeyhAVIXfTCTDZ2cxfwek
     //serduszko ale nie wiem czy wyjdzie na zajeciach tescik
     //unsigned char Pattern3[]= {0x00,0x00,0x0a,0x15,0x11,0x0a,0x04,0x00};
     //unsigned char Pattern4[]= {0x00,0x00,0x0a,0x1f,0x1f,0x0e,0x04,0x00};
     char pom[16]="                ";
-   char tablica[117][17]={
+   char tablica[122][17]={
    "                ",
    "P  I  Z  Z  A ! ",
    "  P I Z  Z A !  ",
@@ -185,11 +184,14 @@ int main ( void )
    "     ZAPRASZAM Y",
    "     ZAPRASZAMY ",
    "    ZAPRASZAMY !",
-   "    ZAPRASZAMY! ",
+   "   ZAPRASZAMY!  ",
    "                ",
-   "    ZAPRASZAMY! ",
+   "   ZAPRASZAMY!  ",
    "                ",
-   "    ZAPRASZAMY! ",
+   "   ZAPRASZAMY!  ",
+   "                ",
+   "   ZAPRASZAMY!  ",
+   "                ",
    "   ZAPRASZAMY!  ",
    "  ZAPRASZAMY!   ",
    " ZAPRASZAMY!    ",
@@ -211,16 +213,18 @@ int main ( void )
    " !  !  !  !  !  ",
    "                ",
    " ! ! ! ! ! ! ! !",
+   "                ",
+   " ! ! ! ! ! ! ! !",
    };
 
     /* Infinite Loop */
     while ( 1 )
     {
-        for(int i=0;i<117;i++)
+        for(int i=0;i<122;i++)
         {
             LCD_PutString ( tablica[i] , sizeof(tablica) ) ;
             LCD_PutString(pom, sizeof(pom));
-            delay(100);
+            delay(200);
             LCD_ClearScreen();
         }
 
